@@ -1,0 +1,7 @@
+/*CREATE MANY QUEUES FOR EACH USER AUTOMATICALLY>>CRAR VÁRIAS QUEUES POR USUÁRIO AUTOMATICAMENTE*/
+/*REMEMBER, YOU CAN MODIFY IP ADDRESS AND NUMBER OF COMPUTERS*/
+/queue simple:
+for i from=1 to=250 do={ add name=("192.168.1." . $i . "/32") target=("192.168.1." . $i . "/32") max-limit=1M/1M } ;
+
+/*OR*/
+/queue simple :for i from=2 to=254 do={ add name=$i target=("192.168.1.$i") max-limit=1M/1M disabled=no }
